@@ -5,28 +5,27 @@ public class Shooter : MonoBehaviour
 {
     [SerializeField] private Transform _firePoint;
     [SerializeField] private Rigidbody _bullet;
+    [SerializeField] private float _timeBetweenShoots;
     [SerializeField] private float _velocity;
-    [SerializeField] float _timeDelay;
 
-    void Start()
+    private void Start()
     {
         StartCoroutine(Shoot());
     }
 
-    IEnumerator Shoot()
+    private IEnumerator Shoot()
     {
-        WaitForSeconds delay = new WaitForSeconds(_timeDelay);
+        WaitForSeconds delay = new WaitForSeconds(_timeBetweenShoots);
         bool isWork = true;
         Vector3 direction;
+        Rigidbody bullet;
 
         while (isWork)
         {
-            Rigidbody bullet = Instantiate(_bullet, _firePoint.position, Quaternion.identity);
-
+            bullet = Instantiate(_bullet, _firePoint.position, Quaternion.identity);
             direction = (_firePoint.position - transform.position).normalized;
-            bullet.GetComponent<Rigidbody>().velocity = direction * _velocity;
-
-            yield return new WaitForSeconds(_timeDelay);
+            bullet.velocity = direction * _velocity;
+            yield return delay;
         }
     }
 }

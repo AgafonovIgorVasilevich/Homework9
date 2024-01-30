@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    [SerializeField] private float _speed;
     [SerializeField] private Transform[] _wayPoints;
+    [SerializeField] private float _speed;
 
     private int _currentPosition = 0;
     private Vector3 _destination;
