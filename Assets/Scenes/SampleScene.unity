@@ -319,7 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076447903}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 2114389212}
   - component: {fileID: 2114389211}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -374,8 +374,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firePoint: {fileID: 1076447903}
   _bullet: {fileID: 7884010296020448723, guid: ece86eb51569c6d419d403e4e0c5d7f0, type: 3}
+  _timeBetweenShoots: 1
   _velocity: 10
-  _timeDelay: 1
 --- !u!136 &2114389212
 CapsuleCollider:
   m_ObjectHideFlags: 0
